@@ -1,0 +1,20 @@
+spring:
+   main:
+      allow-bean-definition-overriding: true
+   rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      listener:
+         simple:
+            concurrency: 4
+            max-concurrency: 8
+            retry:
+               initial-interval: 5000
+      exchange:
+         name: demo-exchange
+      queue:
+         name: demo-queue
+      routing:
+         key: demo-routing-key
